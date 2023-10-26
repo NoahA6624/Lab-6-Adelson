@@ -14,9 +14,14 @@ def encode(pword): #This function encodes a password by increasing each digit by
         if n > 9:
             n %= 10
         eword += str(n)
+    return eword
 
 def decode():
-    pass
+    decoded_password = ""
+    for digit in encoded_password:
+        decoded_digit = str((int(digit) - 3) % 10)
+        decoded_password += decoded_digit
+    return decoded_password
 
 def main():
     password = ""
@@ -39,6 +44,8 @@ def main():
             #FIXME
         else:
             break
+
+            ####
 
 
 # Press the green button in the gutter to run the script.
